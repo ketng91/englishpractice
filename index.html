@@ -16,6 +16,8 @@ body {
   font-size: 20px;
   padding: 5px 10px;
   margin-bottom: 20px;
+  background-color: #f0f0f0;  /* xám nhạt */
+  color: #000;                /* màu chữ đen, tùy chỉnh nếu muốn */
 }
 
 /* câu VN/EN */
@@ -91,10 +93,8 @@ button { padding: 8px 15px; margin-right: 10px; cursor: pointer; }
 <body>
 
 <!-- Chọn topic -->
-<select id="topicSelect">
-  <option value="Environment">Environment</option>
-  <option value="Technology">Technology</option>
-</select>
+<label for="topicSelect">Chọn topic:</label>
+<select id="topicSelect"></select>
 
 <!-- Câu VN + EN -->
 <div class="sentence" id="vnSentence"></div>
@@ -125,7 +125,7 @@ const dataByTopic = {
       ],
       full: "Governments should implement stricter environmental regulations to mitigate the adverse effects of global warming on biodiversity."
     },
-{
+    {
       vn: "Việc áp dụng các nguồn năng lượng tái tạo là then chốt để thúc đẩy sự phát triển bền vững và giảm thiểu tác động môi trường lâu dài của các hoạt động công nghiệp.",
       parts: [
         { vn: "các nguồn năng lượng tái tạo", en: "renewable energy sources", color: "green" },
@@ -133,11 +133,9 @@ const dataByTopic = {
         { vn: "tác động môi trường", en: "environmental impact", color: "blue" },
       ],
       full: "Adopting renewable energy sources is crucial to promote sustainable development and reduce the long-term environmental impact of industrial activities."
-    },
-
-
-
+    }
   ],
+ 
   "Technology": [
     {
       vn: "Sự tiến bộ nhanh chóng của trí tuệ nhân tạo có thể đòi hỏi một sự tái cấu trúc cơ bản đối với thị trường việc làm truyền thống trên toàn cầu.",
@@ -149,6 +147,60 @@ const dataByTopic = {
       ],
       full: "The rapid advancement of artificial intelligence may necessitate a fundamental restructuring of the traditional global job market."
     },
+{
+  vn: "Các chính sách của chính phủ thúc đẩy sự đổi mới trong công nghệ có thể dẫn đến tăng trưởng kinh tế lâu dài.",
+  parts: [
+    { vn: "thúc đẩy", en: "foster", color: "green" },
+    { vn: "sự đổi mới", en: "innovation", color: "yellow" },
+    { vn: "tăng trưởng kinh tế", en: "economic growth", color: "blue" }
+  ],
+  full: "Government policies that foster innovation in technology can lead to long-term economic growth."
+},
+{
+  vn: "Các dự án năng lượng tái tạo có thể tạo ra cơ hội kinh tế bền vững cho các cộng đồng địa phương.",
+  parts: [
+    { vn: "năng lượng tái tạo", en: "renewable energy", color: "pink" },
+    { vn: "tạo ra", en: "generate", color: "green" },
+    { vn: "bền vững", en: "sustainable", color: "blue" },
+    { vn: "các cộng đồng địa phương", en: "local communities", color: "yellow" }
+  ],
+  full: "Renewable energy projects can generate sustainable economic opportunities for local communities."
+},
+
+
+  ],
+
+
+ "Society": [
+{
+  vn: "Hợp tác quốc tế có thể củng cố các năng lực nghiên cứu và danh tiếng toàn cầu của một quốc gia.",
+  parts: [
+    { vn: "củng cố", en: "bolster", color: "green" },
+    { vn: "các năng lực nghiên cứu", en: "research capabilities", color: "yellow" },
+    { vn: "danh tiếng toàn cầu", en: "global reputation", color: "blue" }
+  ],
+  full: "International collaborations can bolster a country’s research capabilities and global reputation."
+},
+{
+  vn: "Các chính sách nhằm giảm bất bình đẳng thu nhập có thể tăng cường sự gắn kết và ổn định xã hội.",
+  parts: [
+    { vn: "bất bình đẳng thu nhập", en: "income inequality", color: "green" },
+    { vn: "tăng cường", en: "strengthen", color: "pink" },
+    { vn: "sự gắn kết", en: "cohesion", color: "yellow" }
+  ],
+  full: "Policies aimed at reducing income inequality can strengthen social cohesion and stability."
+},
+
+
+
+
+
+  ],
+
+
+
+
+  "Education": [
     {
       vn: "Khuyến khích các dự án nhóm tại trường học có thể thúc đẩy các kỹ năng hợp tác thiết yếu và nâng cao sự phát triển xã hội toàn diện của học sinh.",
       parts: [
@@ -158,12 +210,123 @@ const dataByTopic = {
         { vn: "sự phát triển xã hội", en: "social development", color: "pink" }
       ],
       full: "Encouraging group projects in schools can foster essential collaborative skills and enhance the overall social development of students."
-    }
-  ]
+    },
+{
+  vn: "Các trường học nên nuôi dưỡng kỹ năng tư duy phản biện ở học sinh để chuẩn bị cho những thách thức trong tương lai.",
+  parts: [
+    { vn: "nuôi dưỡng", en: "cultivate", color: "green" },
+    { vn: "tư duy phản biện", en: "critical thinking", color: "yellow" },
+    { vn: "những thách thức trong tương lai", en: "prepare for future challenges", color: "blue" }
+  ],
+  full: "Schools should cultivate critical thinking skills among students to prepare them for future challenges."
+},
+{
+  vn: "Các nền tảng học trực tuyến có thể tạo điều kiện tiếp cận giáo dục chất lượng cho học sinh ở vùng xa.",
+  parts: [
+    { vn: "tạo điều kiện", en: "facilitate", color: "green" },
+    { vn: "giáo dục chất lượng", en: "quality education", color: "yellow" },
+    { vn: "vùng xa", en: "remote areas", color: "blue" }
+  ],
+  full: "Online learning platforms can facilitate access to quality education for students in remote areas."
+},
+{
+  vn: "Việc tích hợp công nghệ hiện đại vào chương trình giảng dạy có thể nâng cao trải nghiệm học tập của học sinh.",
+  parts: [
+    { vn: "Việc tích hợp", en: "incorporating", color: "green" },
+    { vn: "chương trình giảng dạy", en: "curriculum", color: "yellow" },
+    { vn: "nâng cao", en: "enhance", color: "pink" },
+    { vn: "trải nghiệm học tập", en: "students’ learning experiences", color: "blue" }
+  ],
+  full: "Incorporating modern technology into the curriculum can enhance students’ learning experiences."
+},
+
+
+  ],
+
+"Health": [
+    {
+      vn: "Khuyến khích các dự án nhóm tại trường học có thể thúc đẩy các kỹ năng hợp tác thiết yếu và nâng cao sự phát triển xã hội toàn diện của học sinh.",
+      parts: [
+        { vn: "các dự án nhóm", en: "group projects", color: "yellow" },
+        { vn: "các kỹ năng hợp tác", en: "collaborative skills", color: "blue" },
+        { vn: "nâng cao", en: "enhance", color: "green" },
+        { vn: "sự phát triển xã hội", en: "social development", color: "pink" }
+      ],
+      full: "Encouraging group projects in schools can foster essential collaborative skills and enhance the overall social development of students."
+    },
+{
+  vn: "Tập thể dục thường xuyên đóng góp vào sức khỏe cả về tinh thần lẫn thể chất.",
+  parts: [
+    { vn: "đóng góp vào", en: "contribute to", color: "green" },
+    { vn: "sức khỏe", en: "well-being", color: "yellow" }
+  ],
+  full: "Regular physical exercise contributes to both mental and physical well-being."
+},
+
+ ],
+
+
+"Work": [
+{
+  vn: "Cấp cho nhân viên quyền ra quyết định trao quyền cho họ chủ động hơn và nâng cao năng suất làm việc.",
+  parts: [
+    { vn: "quyền ra quyết định", en: "decision-making authority", color: "green" },
+    { vn: "trao quyền", en: "empower", color: "pink" },
+    { vn: "chủ động", en: "take initiative", color: "yellow" },
+    { vn: "năng suất làm việc", en: "productivity", color: "blue" }
+  ],
+  full: "Providing employees with decision-making authority empowers them to take initiative and improve productivity."
+},
+{
+  vn: "Việc thực hiện giờ làm việc linh hoạt có thể giảm bớt căng thẳng cho nhân viên.",
+  parts: [
+   { vn: "thực hiện", en: "implement", color: "pink" },
+   { vn: "giờ làm việc", en: "working hours", color: "yellow" },
+   { vn: "giảm bớt căng thẳng", en: "alleviate stress", color: "green" },
+  ],
+  full: "Implementing flexible working hours can alleviate stress among employees."
+},
+
+  ],
+
+"Art&Culture": [
+{
+  vn: "Đầu tư công vào các hoạt động văn hóa có thể kích thích sự sáng tạo và đổi mới trong xã hội.",
+  parts: [
+    { vn: "kích thích", en: "stimulate", color: "green" },
+    { vn: "sự sáng tạo", en: "creativity", color: "yellow" },
+    { vn: "đổi mới", en: "innovation", color: "blue" }
+  ],
+  full: "Public investment in cultural activities can stimulate creativity and innovation in society."
+},
+
+  ],
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
-let currentTopic = "Environment";
+let currentTopic = Object.keys(dataByTopic)[0]; // mặc định topic đầu tiên
 let currentIndex = 0;
+
+/* ====== TỰ ĐỘNG THÊM OPTION CHO TOPIC SELECT ====== */
+const topicSelect = document.getElementById("topicSelect");
+Object.keys(dataByTopic).forEach(topic => {
+  const opt = document.createElement("option");
+  opt.value = topic;
+  opt.textContent = topic;
+  topicSelect.appendChild(opt);
+});
 
 /* ====== LOAD HÀM ====== */
 function load() {
@@ -215,7 +378,8 @@ document.getElementById("changeBtn").onclick = () => {
 };
 
 /* ====== CHỌN TOPIC ====== */
-document.getElementById("topicSelect").addEventListener("change", (e) => {
+topicSelect.value = currentTopic;
+topicSelect.addEventListener("change", (e) => {
   currentTopic = e.target.value;
   currentIndex = 0;
   load();
@@ -242,6 +406,7 @@ document.getElementById("submitBtn").onclick = () => {
   const res = document.getElementById("fullResult");
   if (user.toLowerCase() === item.full.toLowerCase()) {
     res.innerHTML = `<span class="correct">✔ Correct</span>`;
+    firework();
   } else {
     res.innerHTML = `<span class="wrong">✘ ${item.full}</span>`;
   }
