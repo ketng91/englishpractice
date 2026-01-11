@@ -106,7 +106,7 @@ button { padding: 8px 15px; margin-right: 10px; cursor: pointer; }
 <textarea id="fullAnswer" class="full-answer-box" placeholder="Type the full sentence..."></textarea><br>
 
 <button id="submitBtn" class="full-submit">Submit</button>
-<button id="changeBtn" style="margin-left:15px;">Change</button>
+<button id="changeBtn" style="margin-left:15px;">Next sentence</button>
 
 <div class="signature">Lớp Anh thầy Kết</div>
 <div id="fullResult"></div>
@@ -125,6 +125,62 @@ const dataByTopic = {
       ],
       full: "Governments should implement stricter environmental regulations to mitigate the adverse effects of global warming on biodiversity."
     },
+{
+  vn: "Chính phủ nên thực hiện các chính sách để giảm thiểu tác hại về môi trường.",
+  parts: [
+    { vn: "thực hiện", en: "implement", color: "pink" },
+    { vn: "giảm thiểu", en: "minimise", color: "green" },
+    { vn: "tác hại về môi trường", en: "environmental damage", color: "yellow" }
+  ],
+  full: "Governments should implement policies to minimise environmental damage."
+},
+{
+  vn: "Các cơ quan chức năng không nên đánh giá thấp mức độ nghiêm trọng của biến đổi khí hậu.",
+  parts: [
+    { vn: "Các cơ quan chức năng", en: "Authorities", color: "pink" },
+    { vn: "đánh giá thấp", en: "downplay", color: "green" },
+    { vn: "mức độ nghiêm trọng", en: "seriousness", color: "blue" },
+    { vn: "biến đổi khí hậu", en: "climate change", color: "yellow" }
+  ],
+  full: "Authorities should not downplay the seriousness of climate change."
+},
+{
+  vn: "Các chuyên gia cảnh báo rằng con người thường đánh giá thấp các tác động lâu dài của ô nhiễm không khí.",
+  parts: [
+    { vn: "đánh giá thấp", en: "underestimate", color: "green" },
+    { vn: "các tác động lâu dài", en: "long-term effects", color: "pink" },
+    { vn: "ô nhiễm không khí", en: "air pollution", color: "yellow" }
+  ],
+  full: "Experts warn that people often underestimate the long-term effects of air pollution."
+},
+{
+  vn: "Biến đổi khí hậu có thể làm tồi tệ hơn các thiên tai, gây thiệt hại trên diện rộng.",
+  parts: [
+    { vn: "Biến đổi khí hậu", en: "Climate change", color: "pink" },
+    { vn: "làm tồi tệ hơn", en: "worsen", color: "green" },
+    { vn: "các thiên tai", en: "natural disasters", color: "yellow" }
+  ],
+  full: "Climate change can worsen natural disasters, causing widespread damage."
+},
+{
+  vn: "Quy hoạch đô thị kém có thể gây ra tắc nghẽn giao thông và ô nhiễm ở các thành phố lớn.",
+  parts: [
+    { vn: "Quy hoạch đô thị", en: "urban planning", color: "pink" },
+    { vn: "gây ra", en: "cause", color: "green" },
+    { vn: "tắc nghẽn giao thông", en: "traffic congestion", color: "yellow" },
+    { vn: "ô nhiễm", en: "pollution", color: "blue" }
+  ],
+  full: "Poor urban planning can cause traffic congestion and pollution in major cities."
+},
+{
+  vn: "Việc phụ thuộc quá nhiều vào các nhiên liệu hóa thạch có thể dẫn đến sự suy thoái môi trường nghiêm trọng",
+  parts: [
+    { vn: "các nhiên liệu hóa thạch", en: "fossil fuels", color: "pink" },
+    { vn: "dẫn đến", en: "lead to", color: "green" },
+    { vn: "sự suy thoái môi trường", en: "environmental degradation", color: "yellow" }
+  ],
+  full: "Overreliance on fossil fuels may lead to severe environmental degradation."
+},
     {
       vn: "Việc áp dụng các nguồn năng lượng tái tạo là then chốt để thúc đẩy sự phát triển bền vững và giảm thiểu tác động môi trường lâu dài của các hoạt động công nghiệp.",
       parts: [
@@ -166,10 +222,46 @@ const dataByTopic = {
   ],
   full: "Renewable energy projects can generate sustainable economic opportunities for local communities."
 },
+  ],
+
+
+
+
+
+
+
+ "Economy-Housing": [
+{
+  vn: "Thuế cao có thể áp đặt áp lực tài chính cho các doanh nghiệp nhỏ.",
+  parts: [
+    { vn: "áp đặt", en: "impose", color: "pink" },
+    { vn: "áp lực tài chính", en: " financial pressure", color: "green" },
+    { vn: "doanh nghiệp nhỏ", en: "small businesses", color: "yellow" }
+  ],
+  full: "High taxes can impose financial pressure on small businesses."
+},
+{
+  vn: "Nếu không được bảo trì đúng cách, cơ sở hạ tầng sẽ trở nên xấu đi nhanh chóng.",
+  parts: [
+    { vn: "bảo trì", en: "maintenance", color: "pink" },
+    { vn: "cơ sở hạ tầng", en: "infrastructure", color: "yellow" },
+    { vn: "sẽ trở nên xấu đi", en: "deteriorate", color: "green" },
+  ],
+  full: "Without proper maintenance, infrastructure will deteriorate rapidly."
+},
+{
+  vn: "Các chi phí chăm sóc sức khỏe tăng đặt gánh nặng đáng kể lên các gia đình có thu nhập thấp.",
+  parts: [
+    { vn: "Các chi phí chăm sóc sức khỏe", en: "healthcare costs", color: "blue" },
+    { vn: "gánh nặng", en: "burden", color: "pink" },
+    { vn: "gia đình có thu nhập thấp", en: "low-income families", color: "yellow" }
+  ],
+  full: "Rising healthcare costs place a significant burden on low-income families."
+},
+
 
 
   ],
-
 
  "Society": [
 {
@@ -182,6 +274,25 @@ const dataByTopic = {
   full: "International collaborations can bolster a country’s research capabilities and global reputation."
 },
 {
+  vn: "Tham nhũng có thể làm xói mòn lòng tin của công chúng vào các cơ quan chính phủ.",
+  parts: [
+    { vn: "Tham nhũng", en: "Corruption", color: "pink" },
+    { vn: "làm xói mòn", en: "erode", color: "green" },
+    { vn: "lòng tin của công chúng", en: "public trust", color: "yellow" },
+    { vn: "các cơ quan chính phủ", en: "government institutions", color: "blue" }
+  ],
+  full: "Corruption can erode public trust in government institutions."
+},
+{
+  vn: "Các chính sách thiếu nhất quán có thể làm suy yếu các nỗ lực giảm nghèo.",
+  parts: [
+    { vn: "thiếu nhất quán", en: "Inconsistent", color: "pink" },
+    { vn: "làm suy yếu", en: "undermine", color: "green" },
+    { vn: "giảm nghèo", en: "reduce poverty", color: "yellow" }
+  ],
+  full: "Inconsistent policies may undermine efforts to reduce poverty."
+},
+{
   vn: "Các chính sách nhằm giảm bất bình đẳng thu nhập có thể tăng cường sự gắn kết và ổn định xã hội.",
   parts: [
     { vn: "bất bình đẳng thu nhập", en: "income inequality", color: "green" },
@@ -189,6 +300,16 @@ const dataByTopic = {
     { vn: "sự gắn kết", en: "cohesion", color: "yellow" }
   ],
   full: "Policies aimed at reducing income inequality can strengthen social cohesion and stability."
+},
+{
+  vn: "Các thủ tục quan liêu thường cản trở việc ra quyết định hiệu quả trong các cơ quan công.",
+  parts: [
+    { vn: "Các thủ tục quan liêu", en: "Bureaucratic procedures", color: "pink" },
+    { vn: "cản trở", en: "hinder", color: "green" },
+    { vn: "việc ra quyết định", en: "decision-making", color: "yellow" },
+    { vn: "các cơ quan công", en: "public institutions", color: "blue" }
+  ],
+  full: "Bureaucratic procedures often hinder efficient decision-making in public institutions."
 },
 
 
@@ -244,21 +365,40 @@ const dataByTopic = {
   ],
 
 "Health": [
-    {
-      vn: "Khuyến khích các dự án nhóm tại trường học có thể thúc đẩy các kỹ năng hợp tác thiết yếu và nâng cao sự phát triển xã hội toàn diện của học sinh.",
-      parts: [
-        { vn: "các dự án nhóm", en: "group projects", color: "yellow" },
-        { vn: "các kỹ năng hợp tác", en: "collaborative skills", color: "blue" },
-        { vn: "nâng cao", en: "enhance", color: "green" },
-        { vn: "sự phát triển xã hội", en: "social development", color: "pink" }
-      ],
-      full: "Encouraging group projects in schools can foster essential collaborative skills and enhance the overall social development of students."
-    },
+{
+  vn: "Các hệ thống y tế không đầy đủ có thể dẫn đến tỷ lệ tử vong cao hơn ở các nhóm dân cư dễ bị tổn thương.",
+  parts: [
+    { vn: "Các hệ thống y tế", en: "healthcare systems", color: "pink" },
+    { vn: "dẫn đến", en: "result in", color: "green" },
+    { vn: "tỷ lệ tử vong", en: "mortality rates", color: "yellow" },
+    { vn: "nhóm dân cư dễ bị tổn thương", en: "vulnerable populations", color: "blue" }
+  ],
+  full: "Inadequate healthcare systems can result in higher mortality rates among vulnerable populations."
+},
+{
+  vn: "Việc tiếp xúc quá mức với căng thẳng có thể làm giảm hiệu quả nhận thức.",
+  parts: [
+    { vn: "Việc tiếp xúc quá mức", en: "Overexposure", color: "pink" },
+    { vn: "làm giảm", en: "diminish", color: "green" },
+    { vn: "hiệu quả nhận thức", en: "cognitive performance", color: "yellow" }
+  ],
+  full: "Overexposure to stress can diminish cognitive performance."
+},
+{
+  vn: "Việc sử dụng màn hình quá mức có thể làm trầm trọng thêm các vấn đề về sức khỏe tâm thần ở các thanh thiếu niên.",
+  parts: [
+    { vn: "Việc sử dụng màn hình", en: "screen time", color: "pink" },
+    { vn: "làm trầm trọng thêm", en: "aggravate", color: "green" },
+    { vn: "các vấn đề về sức khỏe tâm thần", en: "mental health issues", color: "yellow" },
+    { vn: "các thanh thiếu niên", en: "adolescents", color: "blue" }
+  ],
+  full: "Excessive screen time may aggravate mental health issues among adolescents."
+},
 {
   vn: "Tập thể dục thường xuyên đóng góp vào sức khỏe cả về tinh thần lẫn thể chất.",
   parts: [
     { vn: "đóng góp vào", en: "contribute to", color: "green" },
-    { vn: "sức khỏe", en: "well-being", color: "yellow" }
+    { vn: "sức khỏe", en: "well-being", color: "yellow" },
   ],
   full: "Regular physical exercise contributes to both mental and physical well-being."
 },
@@ -276,6 +416,25 @@ const dataByTopic = {
     { vn: "năng suất làm việc", en: "productivity", color: "blue" }
   ],
   full: "Providing employees with decision-making authority empowers them to take initiative and improve productivity."
+},
+{
+  vn: "Khối lượng công việc quá lớn có thể làm choáng ngợp nhân viên, giảm năng suất làm việc.",
+  parts: [
+    { vn: "Khối lượng công việc", en: "workload", color: "pink" },
+    { vn: "làm choáng ngợp", en: "overwhelm", color: "green" },
+    { vn: "năng suất làm việc", en: "productivity", color: "yellow" }
+  ],
+  full: "Excessive workload can overwhelm employees, reducing productivity."
+},
+{
+  vn: "Thất nghiệp tăng có thể làm trầm trọng thêm sự bất bình đẳng xã hội ở các khu vực đô thị.",
+  parts: [
+   { vn: "Thất nghiệp", en: "unemployment", color: "pink" },
+    { vn: "làm trầm trọng thêm", en: "exacerbate", color: "green" },
+    { vn: "sự bất bình đẳng xã hội", en: "social inequality", color: "yellow" },
+    { vn: "khu vực đô thị", en: "urban areas", color: "blue" }
+  ],
+  full: "Rising unemployment can exacerbate social inequality in urban areas."
 },
 {
   vn: "Việc thực hiện giờ làm việc linh hoạt có thể giảm bớt căng thẳng cho nhân viên.",
