@@ -1,50 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
 <meta charset="UTF-8" />
-<title>Vietnamese to English Practice-Lớp Anh thầy Kết</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnamese to English Practice - Khoá Writing</title>
+
+<!-- Font Awesome cho icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 <style>
+/* ===== BODY ===== */
 body { 
   margin-left: 4cm; 
   margin-right: 4cm;
   font-family: Arial, sans-serif;
   padding: 20px;
+  background-color: #f9f9f9;
 }
 
-/* list box topic */
+/* ===== HEADER ===== */
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #ffd6ba;
+  color: 7a4e3e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  
+}
+
+/* Left side */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+.header-left i {
+  font-size: 28px;
+  cursor: pointer;
+}
+.header-left a {
+  color: white;
+  text-decoration: none;
+}
+.header-left .header-text {
+  font-weight: bold;
+}
+
+/* Center title */
+.header-center {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+margin-left: -4cm;
+}
+
+/* Optional: hover effect */
+.header-left i:hover {
+  color: #ffd700;
+}
+
+/* ====== LIST BOX TOPIC ====== */
 #topicSelect {
   font-size: 20px;
   padding: 5px 10px;
+  margin-top: 100px; /* tạo khoảng cách so với header cố định */
   margin-bottom: 20px;
   background-color: #f0f0f0;  /* xám nhạt */
-  color: #000;                /* màu chữ đen, tùy chỉnh nếu muốn */
+  color: #000;
+  border-radius: 6px;
 }
 
-/* câu VN/EN */
-.sentence { margin-bottom: 20px; font-size: 25px; line-height: 1.6; }
-.highlight { font-weight: bold; padding: 2px 4px; border-radius: 4px; } 
+/* ====== CÂU VN/EN ===== */
+.sentence { 
+  margin-bottom: 20px; 
+  font-size: 25px; 
+  line-height: 1.6; 
+}
+.highlight { 
+  font-weight: bold; 
+  padding: 2px 4px; 
+  border-radius: 4px; 
+}
 
-/* các input */
-button { padding: 8px 15px; margin-right: 10px; cursor: pointer; }  
+/* ====== INPUT ROW ===== */
+.input-row { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  margin-bottom: 8px; 
+}
+.input-row input { 
+   padding: 6px; 
+   width: 400px;
+   font-size: 22px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+.arrow-icon { font-size: 18px; font-weight: bold; }
+.result { margin-left: 10px; font-weight: bold; font-size: 22px; }
+.correct { color: green; font-weight: bold; font-size: 18px; }
+.wrong { color: red; font-weight: bold; font-size: 18px; }
+
+/* ====== FULL ANSWER BOX ===== */
+.full-answer-box { 
+  width: 95%; 
+  height: 100px; 
+  padding: 8px; 
+  font-size: 25px;
+  font-family: Arial; 
+  color: blue;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.full-submit { padding: 6px 12px; }
+
+/* ====== BUTTONS ===== */
+button { 
+  padding: 8px 15px; 
+  margin-right: 10px; 
+  cursor: pointer; 
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
 .green { background: lightgreen; }
 .blue { background: lightblue; }
 .yellow { background: khaki; }
 .pink { background: pink; }
 
-.input-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-.input-row input { 
-   padding: 6px; 
-   width: 400px;
-   font-size: 22px;
-}
-.arrow-icon { font-size: 18px; font-weight: bold; }
-.result { margin-left: 10px; font-weight: bold;font-size: 22px; }
-.correct { color: green; font-weight: bold; font-size: 18px;}
-.wrong { color: red; font-weight: bold; font-size: 18px;}
-.full-answer-box { width: 95%; height: 100px; padding: 8px; font-size: 25px;font-family: Arial; color: blue}
-.full-submit { padding: 6px 12px; }
-
-/* chữ ký thầy Kết */
+/* ====== CHỮ KÝ THẦY KẾT ===== */
 .signature {
   font-size: 18px;
   font-family: Arial;
@@ -55,7 +150,7 @@ button { padding: 8px 15px; margin-right: 10px; cursor: pointer; }
   margin-top: -25px;
 }
 
-/* ====== PHÁO HOA ====== */
+/* ====== PHÁO HOA ===== */
 .confetti {
   position: fixed;
   top: 50%;
@@ -72,18 +167,11 @@ button { padding: 8px 15px; margin-right: 10px; cursor: pointer; }
     opacity: 1;
   }
   50% {
-    transform: 
-      translate(
-        calc(var(--x) * 0.5),
-        calc(var(--y) * 0.4)
-      )
-      scale(1.1);
+    transform: translate(calc(var(--x) * 0.5), calc(var(--y) * 0.4)) scale(1.1);
     opacity: 1;
   }
   100% {
-    transform: 
-      translate(var(--x), var(--y))
-      scale(0.5);
+    transform: translate(var(--x), var(--y)) scale(0.5);
     opacity: 0;
   }
 }
@@ -92,15 +180,31 @@ button { padding: 8px 15px; margin-right: 10px; cursor: pointer; }
 
 <body>
 
-<!-- Chọn topic -->
+<!-- ===== HEADER ===== -->
+<header>
+  <!-- Left: homepage icon + text -->
+  <div class="header-left">
+    <a href="https://ketng91.github.io/lopanhthayket/" target="_blank">
+      <i class="fa fa-home"></i>
+    </a>
+    <span class="header-text">Lớp Anh thầy Kết</span>
+  </div>
+
+  <!-- Center: main title -->
+  <div class="header-center">
+    Khoá Writing
+  </div>
+</header>
+
+<!-- ===== CHỌN TOPIC ===== -->
 <label for="topicSelect">Chọn topic:</label>
 <select id="topicSelect"></select>
 
-<!-- Câu VN + EN -->
+<!-- ===== CÂU VN + EN ===== -->
 <div class="sentence" id="vnSentence"></div>
 <div class="sentence" id="enSentence"></div>
 
-<!-- Các input -->
+<!-- ===== INPUTS ===== -->
 <div id="inputs"></div>
 
 <textarea id="fullAnswer" class="full-answer-box" placeholder="Type the full sentence..."></textarea><br>
@@ -520,12 +624,12 @@ const dataByTopic = {
 
 };
 
-let currentTopic = Object.keys(dataByTopic)[0]; // mặc định topic đầu tiên
+let currentTopic = Object.keys(dataByTopic)[0];
 let currentIndex = 0;
 
 /* ====== TỰ ĐỘNG THÊM OPTION CHO TOPIC SELECT ====== */
 const topicSelect = document.getElementById("topicSelect");
-Object.keys(dataByTopic).sort().forEach(topic => {  // sort() sắp xếp A-Z
+Object.keys(dataByTopic).sort().forEach(topic => {
   const opt = document.createElement("option");
   opt.value = topic;
   opt.textContent = topic;
