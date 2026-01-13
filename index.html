@@ -163,13 +163,17 @@ header {
 
 /* ====== BUTTONS ===== */
 button { 
-  padding: 8px 15px; 
+  padding: 8px 20px;       /* khoảng cách trong nút */
   margin-right: 10px; 
   cursor: pointer; 
   border-radius: 5px;
   border: none;
   font-size: 16px;
   flex-shrink: 0;
+  width: auto;              /* độ rộng vừa nội dung */
+  max-width: 200px;         /* giới hạn tối đa */
+  white-space: nowrap;      /* tránh xuống dòng */
+  text-align: center;
 }
 .green { background: lightgreen; }
 .blue { background: lightblue; }
@@ -272,11 +276,13 @@ button {
     margin-bottom: 5px;
   }
 
-  button {
-    width: 100%;
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
+ button {
+  width: auto;             /* không full width */
+  max-width: 180px;        /* giới hạn vừa phải */
+  font-size: 14px;         /* font nhỏ hơn cho mobile */
+  margin-bottom: 5px;      
+}
+
 
   .signature {
     font-size: 16px;
